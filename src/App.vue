@@ -1,13 +1,15 @@
 <template>
-  <div id="app">
+  <div id="app" v-on:click="change" >
     <TopBar/>  
-    <GameTable/>
+    <GameTable :table-data="tableData"/>
     <player/>
     <BottomBar/>
   </div>
 </template>
 
 <script>
+import {Data} from './lib/defaultData'
+
 import GameTable from './components/Main'
 import TopBar from './components/TopBar'
 import Player from './components/Player'
@@ -15,17 +17,34 @@ import BottomBar from './components/BottomBar'
 import {cards} from './lib/cardsToggle'
 export default {
   name: 'app',
+  data() {
+    return{
+      tableData:window.data.tableData,
+      playerData:Data.playerData
+    }
+  },
   components: {
     GameTable,TopBar,Player,BottomBar
   },
+
   created(){
-    
+    // alert('1')
+     this.tableInit()
+  },
+  beforeMount(){
+    //  this.tableInit()
   },
   mounted(){
     cards.toggle(121)
+    // console.log(this.tableData)
   },
   methods:{
-    
+    // 初始化游戏桌面
+    tableInit() {
+    }
+    ,change(){
+      this.tableData[20].cardId='0-11111'
+    }
   }
 }
 </script>

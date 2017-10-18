@@ -1,48 +1,10 @@
 <template>
   <div id="game-table" >
-   <h1>{{msg}}</h1>
    <ul class="table-map">
-     <li><span class="center"></span></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li><li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li><li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li><li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li><li></li>
-     <li></li>
-     <li></li>
-     <li></li>
-     <li></li>
+     <li v-for="(item,index) in tableData" :key="item.index" :data-cardid="item.cardId" :data-index="item.index" :data-status="item.status" >
+       <!-- {{item}} -->
+        <Cards class="cards" :cardId="item.cardId"></Cards>
+     </li>
      
    </ul>
   </div>
@@ -50,19 +12,30 @@
 
 <script>
 import Mixin from '../lib/Mixin'
+import Cards from './Cards'
 export default {
-  mixins:[Mixin],
+  props: ['tableData'],
+  mixins: [Mixin],
   name: 'game-table',
-  data () {
+  data() {
     return {
-      msg: '这里是主界面',
       height: this.getHeight()
     }
   },
-    mounted(){
+  created(){
+    console.log(this.tableData)
+    
+  },
+  mounted() {
     console.log(this.height)
     // console.log(this.props.kk)
-    }
+  },
+  updated(){
+    
+  },
+  components:{
+    Cards
+  }
 }
 </script>
 
@@ -70,15 +43,16 @@ export default {
 <style scoped>
 #game-table{
   /* background: red; */
+  padding-top: 1vh;
   width: 100%;
   margin: 0 auto;
-  height: 70vh;
+  height: 58vh;
 }
 ul.table-map{
   /* border: 1px solid red; */
   width: 95%;
   list-style: none;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;  
@@ -92,7 +66,8 @@ ul.table-map li{
   background: #eee;
   box-sizing: border-box;
   background-clip: content-box;
-  padding: 5px;
+  padding: 1px;
+  position: relative;
 }
 ul.table-map li>.center{
   display: block;
@@ -100,5 +75,8 @@ ul.table-map li>.center{
   height: 30%;
   margin: 25% auto;
   background: red;
+}
+li.fill{
+  background:yellow;
 }
 </style>

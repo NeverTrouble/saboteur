@@ -1,6 +1,5 @@
 <template>
 <div id="topbar">
-  <h1>{{msg}}</h1>
    <p></p>
 </div>
 </template>
@@ -19,7 +18,7 @@
 <style>
 #topbar{
   background: green;
-  height: 5vh;
+  height: 15vh;
   width: 100%;
 }
 </style>

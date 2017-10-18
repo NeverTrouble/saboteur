@@ -1,6 +1,5 @@
 <template>
   <div id="bottombar">
-    <h1>{{msg}}</h1>
   </div>
 </template>
 <script>
@@ -15,7 +14,7 @@
 
 <style>
 #bottombar{
-  height: 10vh;
+  height: 6vh;
   background:green;
   width: 100%;
 }
