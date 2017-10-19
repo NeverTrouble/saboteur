@@ -20,7 +20,8 @@ export default {
   data() {
     return{
       tableData:window.data.tableData,
-      playerData:Data.playerData
+      playerData:Data.playerData,
+      isDrag:false
     }
   },
   components: {
@@ -30,6 +31,7 @@ export default {
   created(){
     // alert('1')
      this.tableInit()
+     this.init();
   },
   beforeMount(){
     //  this.tableInit()
@@ -39,6 +41,16 @@ export default {
     // console.log(this.tableData)
   },
   methods:{
+    // 初始化
+    init(){
+      this.remInit();
+    },
+    remInit(){
+      const docEl = document.documentElement
+      const windowH = window.screen.height
+      const screenWidth = docEl.clientWidth || window.screen.width || 360
+      docEl.style.fontSize = (100 * screenWidth / 720) + 'px'
+    },
     // 初始化游戏桌面
     tableInit() {
     }

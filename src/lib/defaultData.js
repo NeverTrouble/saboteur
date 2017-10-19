@@ -1,5 +1,4 @@
-/*
-  ****************
+/*****************
   **** @tablData : 游戏桌面的数据
            @index : 当前位置索引，从左到右从上到下排序（00-45）
            @cardId : 当前位置的卡片的id；格式：0-00000
@@ -12,10 +11,10 @@
            @title : 当前卡片名称
            @dsc : 当前卡片描述 
  
- */
+ ****************/
 
 export class Data {
- static tableData = [{
+  static tableData = [{
       index: 43,
       status: 1,
       cardId: '1-11111',
@@ -46,9 +45,21 @@ export class Data {
       dsc: '这里是终点卡，只有一张终点卡有黄金'
     }
   ]
-  static playerData={
-    status:"000",
-    
+
+  /*****************
+  **** @playerData : 玩家数据
+ 
+ ****************/
+  static playerData = {
+    actor: {
+      name: '角色名',
+      dsc: '你的角色需要做什么！',
+      avator: '../assets/svg/avator.svg'
+    },
+    act_status: "000",
+    cards_place:[],
+      
+
   }
 
 }

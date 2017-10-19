@@ -1,6 +1,15 @@
 
 
 {
+  "playerData":{
+    "actor": {
+      "name": "掘金者",
+      "dsc": "我要挖到黄金！",
+      "avator": "../assets/svg/goodP.svg"
+    },
+    "act_status": "000",
+    "cards_place":[]
+  },
   "tableData": [{
     "index": 1,
     "status": 1,

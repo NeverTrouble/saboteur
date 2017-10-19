@@ -1,6 +1,10 @@
 *{
   margin: 0;padding: 0;
 }
-ul{
+ul,li{
   list-style: none;
+}
+html,body{
+  max-width: 720px;
+  /* min-height: 400px; */
 }
