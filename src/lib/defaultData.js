@@ -16,30 +16,58 @@
 export class Data {
   static tableData = [{
       index: 43,
-      status: 1,
-      cardId: '1-11111',
+      card_classify: 1,
+      card_number: '1-11111',
+      card_status: {
+        top: 1,
+        left: 1,
+        right: 1,
+        bottom: 1,
+        middle: 1
+      },
       gold: 0,
       title: '起点卡',
       dsc: '这是起点卡，决定从哪里开始放置卡牌'
     }, {
       index: 1,
-      status: 1,
-      cardId: '2-11111',
+      card_classify: 2,
+      card_number: '2-11111',
+      cardId: {
+        top: 1,
+        left: 1,
+        right: 1,
+        bottom: 1,
+        middle: 1
+      },
       gold: 0,
       title: '终点卡',
       dsc: '这里是终点卡，只有一张终点卡有黄金'
     }, {
       index: 3,
-      status: 1,
-      cardId: '2-11111',
+      card_classify: 2,
+      card_number: '2-11111',
+      card_status: {
+        top: 1,
+        left: 1,
+        right: 1,
+        bottom: 1,
+        middle: 1
+      },
       gold: 0,
       title: '终点卡',
       dsc: '这里是终点卡，只有一张终点卡有黄金'
     },
     {
       index: 5,
-      status: 1,
-      cardId: '2-11111',
+      card_classify: 2,
+      card_number: '2-11111',
+      card_status: {
+        top: 1,
+        left: 1,
+        right: 1,
+        bottom: 1,
+        middle: 1
+      },
       gold: 0,
       title: '终点卡',
       dsc: '这里是终点卡，只有一张终点卡有黄金'
@@ -57,9 +85,7 @@ export class Data {
       avator: '../assets/svg/avator.svg'
     },
     act_status: "000",
-    cards_place:[],
-      
-
+    cards_place: [],
   }
 
 }

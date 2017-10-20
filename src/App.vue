@@ -1,8 +1,8 @@
 <template>
   <div id="app" v-on:click="change" >
     <TopBar/>  
-    <GameTable :table-data="tableData"/>
-    <player/>
+    <GameTable :tableData="tableData"/>
+    <Player :playerData="playerData"/>
     <BottomBar/>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   data() {
     return{
       tableData:window.data.tableData,
-      playerData:Data.playerData,
+      playerData:window.data.playerData,
       isDrag:false
     }
   },
@@ -30,7 +30,6 @@ export default {
 
   created(){
     // alert('1')
-     this.tableInit()
      this.init();
   },
   beforeMount(){

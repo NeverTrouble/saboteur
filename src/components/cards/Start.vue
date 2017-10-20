@@ -1,5 +1,6 @@
 <template>
   <div class="card_start">
+    {{data.title}}
 
   </div>
 </template>

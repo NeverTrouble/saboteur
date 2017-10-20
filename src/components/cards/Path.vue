@@ -1,5 +1,6 @@
 <template>
   <div class="card_path" >
+    {{data.dsc}}
   </div>
 </template>
 

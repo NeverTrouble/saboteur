@@ -1,15 +1,18 @@
 <template>
 <div id="player">
   <div class="game_info">
-    <div class="avator" >
-      <p v-bind:style="{backgroundImage:`url('${actor.img}')`}"><span> {{actor.name}}</span><span>描述描述</span></p>
+    <div class="avator">
+      <p v-bind:style="{backgroundImage:`url('${actor.img}')`}">
+        <span> {{actor.name}}</span>
+        <span>描述描述</span>
+      </p>
     </div>
     <div class="msg">
       <li>第一个信息信息</li>
       <li>第二个信息喝辣的水力发电萨拉</li>
       <li>地上打发的撒</li>
       <li>地上打发的撒</li>
-      
+
     </div>
   </div>
   <div class="game_content">
@@ -22,15 +25,17 @@
     </div>
     <div class="game_cards-place">
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-         <li></li>
-        <li></li>
+        <li v-for="(item,index) in playerData.cardPlace" :key="item.index" :data-cardid="item.card_number" :data-index="item.index"
+          :data-classify="item.card_classify">
+          <!-- {{item}} -->
+          <Cards class="cards" :cardData="item">
+          </Cards>
+        </li>
       </ul>
     </div>
+
   </div>
+
   <div class="game_control">
     <span></span>
     <span></span>
@@ -42,6 +47,7 @@
 <script>
 import Cards from './Cards'
   export default {
+    props:['playerData'],
     data() {
       return {
         msg:"玩家界面",
@@ -51,7 +57,10 @@ import Cards from './Cards'
         }
       }
     },
-    component:{
+    mounted(){
+      console.log(this.playerData)
+    },
+    components:{
       Cards
     }
   }
@@ -79,9 +88,7 @@ import Cards from './Cards'
       
       p{
         display: block;
-        height: 100%;
-        // background-image:url('../assets/logo.png');
-        // background-image:url('../assets/svg/avator.svg');        
+        height: 100%;      
         background-repeat: no-repeat;
         background-position:0 0; 
         background-size: contain;
@@ -90,7 +97,6 @@ import Cards from './Cards'
         span{
           display: block;
           padding-top: 0.1rem;
-          // margin-top: -0.1rem;
           line-height: 100%;
           font-weight: bold;
           font-size: @nameTitle;
@@ -156,6 +162,7 @@ import Cards from './Cards'
           width: 40%;
           margin:0.05rem ;
           background: #eee;
+          position: relative;
         }
       }
 

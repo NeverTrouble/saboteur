@@ -1,9 +1,8 @@
 <template>
   <div id="game-table" >
    <ul class="table-map">
-     <li v-for="(item,index) in tableData" :key="item.index" :data-cardid="item.cardId" :data-index="item.index" :data-status="item.status" >
-       <!-- {{item}} -->
-        <Cards class="cards" :cardId="item.cardId"></Cards>
+     <li v-for="(item,index) in tableData" :key="item.index" :data-cardid="item.card_number" :data-index="item.index" :data-classify="item.card_classify">
+        <Cards class="cards" :cardData="item" ></Cards>
      </li>
      
    </ul>
